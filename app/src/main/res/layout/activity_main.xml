@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout android:background="#fdb46d" android:id="@+id/Layouttopo_tp" android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal">
+
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/icone_programa"/>
+
+        <LinearLayout android:gravity="center_vertical" android:id="@+id/layout_titulo_programa_tp" android:layout_gravity="center" android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical">
+
+            <TextView android:gravity="center" android:layout_gravity="center" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Sistema de" android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+            <TextView android:gravity="center" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Cadastro" android:textAppearance="?android:attr/textAppearanceLarge"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingBottom="15dp" android:paddingTop="15dp" android:text="Bem vindo ao Sistema de Cadastro. Esse é um pequeno software de cadastro de usuários. Escolha uma das opções abaixo :" android:textSize="18sp"/>
+
+    <Button android:id="@+id/btcadastrar_usuario" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Cadastrar Usuário"/>
+
+    <Button android:id="@+id/bt_listar_usuarios_cadastrados" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Listar usuários cadastrados"/>
+</LinearLayout>

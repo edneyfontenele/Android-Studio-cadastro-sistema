@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout android:background="#fdb46d" android:id="@+id/Layouttopo" android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal">
+
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/icone_programa"/>
+
+        <LinearLayout android:gravity="center_vertical" android:id="@+id/Layout_titulo_programa" android:layout_gravity="center" android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical">
+
+            <TextView android:gravity="center" android:layout_gravity="center" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Cadastro de" android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+            <TextView android:gravity="center" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Usuário" android:textAppearance="?android:attr/textAppearanceLarge"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView android:id="@+id/txtnome" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingTop="10dp" android:text="Preencha os dados abaixo :" android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView android:id="@+id/textView2" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingTop="15dp" android:text="Nome :" android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <EditText android:id="@+id/ednome" android:layout_height="wrap_content" android:layout_width="match_parent">
+        <requestFocus />
+    </EditText>
+
+    <TextView android:id="@+id/textView3" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingTop="10dp" android:text="Endereço:" android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <EditText android:id="@+id/edendereco" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+
+    <TextView android:id="@+id/textView4" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingTop="10dp" android:text="Telefone :" android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <EditText android:id="@+id/edtelefone" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+
+    <LinearLayout android:gravity="center" android:id="@+id/Layout_botoes_cadastro" android:layout_height="wrap_content" android:layout_width="match_parent">
+
+        <Button android:id="@+id/btcadastrar" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Cadastrar"/>
+
+        <Button android:id="@+id/btcancelar_cadastro" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Cancelar"/>
+    </LinearLayout>
+</LinearLayout>
