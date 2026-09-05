@@ -1,14 +1,14 @@
 package com.example.cadastro;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class CadastroActivity extends Activity {
+public class CadastroActivity extends AppCompatActivity {
     EditText ednome, edendereco, edtelefone;
     Button btcadastrar, btcancelar_cadastro;
 

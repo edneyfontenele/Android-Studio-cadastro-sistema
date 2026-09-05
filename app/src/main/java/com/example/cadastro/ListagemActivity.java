@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class ListagemActivity extends Activity {
+public class ListagemActivity extends AppCompatActivity {
     Button btanterior, btproximo, btfechar;
     TextView txtnome, txttelefone, txtendereco, txtstatus;
     int index;
