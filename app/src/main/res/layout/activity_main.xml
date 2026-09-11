@@ -1,24 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <LinearLayout android:background="#fdb46d" android:id="@+id/Layouttopo_tp" android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal">
+    <TextView android:text="@string/escolha_o_seu_produto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
 
-        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/icone_programa"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/arroz_r_2_69"
+        android:id="@+id/chkarroz"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-        <LinearLayout android:gravity="center_vertical" android:id="@+id/layout_titulo_programa_tp" android:layout_gravity="center" android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical">
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/leite_r_5_00"
+        android:id="@+id/chkleite"
+        android:layout_below="@+id/chkarroz"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-            <TextView android:gravity="center" android:layout_gravity="center" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Sistema de" android:textAppearance="?android:attr/textAppearanceLarge"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/carne_r_9_70"
+        android:id="@+id/chkcarne"
+        android:layout_below="@+id/chkleite"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-            <TextView android:gravity="center" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Cadastro" android:textAppearance="?android:attr/textAppearanceLarge"/>
-        </LinearLayout>
-    </LinearLayout>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feij_o_r_2_70"
+        android:id="@+id/chkfeijao"
+        android:layout_below="@+id/chkcarne"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingBottom="15dp" android:paddingTop="15dp" android:text="Bem vindo ao Sistema de Cadastro. Esse é um pequeno software de cadastro de usuários. Escolha uma das opções abaixo :" android:textSize="18sp"/>
-
-    <Button android:id="@+id/btcadastrar_usuario" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Cadastrar Usuário"/>
-
-    <Button android:id="@+id/bt_listar_usuarios_cadastrados" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Listar usuários cadastrados"/>
-</LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/total_das_compras"
+        android:id="@+id/bttotal"
+        android:layout_below="@+id/chkfeijao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

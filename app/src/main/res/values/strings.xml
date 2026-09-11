@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Cadastro</string>
+    <string name="app_name">Sistema de Compras</string>
+    <string name="escolha_o_seu_produto">Escolha o seu produto:</string>
+    <string name="arroz_r_2_69">Arroz (R$ 2,69)</string>
+    <string name="leite_r_5_00">Leite (R$ 5,00)</string>
+    <string name="carne_r_9_70">Carne (R$ 10,90)</string>
+    <string name="feij_o_r_2_70">Feijão (R$ 2,30)</string>
+    <string name="total_das_compras">TOTAL DAS COMPRAS</string>
+
+    <!-- Opções de pagamento e mensagens -->
+    <string name="forma_pagamento">Escolha a forma de pagamento:</string>
+    <string name="pagamento_sucesso">Pagamento com %s realizado com sucesso!</string>
 </resources>
