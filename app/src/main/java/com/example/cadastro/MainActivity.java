@@ -1,86 +1,48 @@
 package com.example.cadastro;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.widget.Button;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
-    CheckBox chkarroz, chkleite, chkcarne, chkfeijao;
-    Button bttotal;
+    Button btcriarbanco;
+    Button btcadastrardados;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        chkarroz = findViewById(R.id.chkarroz);
-        chkleite = findViewById(R.id.chkleite);
-        chkcarne = findViewById(R.id.chkcarne);
-        chkfeijao = findViewById(R.id.chkfeijao);
-        bttotal = findViewById(R.id.bttotal);
+        btcriarbanco = findViewById(R.id.btcriarbanco);
+        btcadastrardados = findViewById(R.id.btcadastrardados);
 
-        bttotal.setOnClickListener(view -> {
-            double total = 0;
-            StringBuilder resumo = new StringBuilder("Resumo da Compra:\n\n");
+        btcadastrardados.setOnClickListener(args0 -> {
+            Intent gravaRegistroActivity = new Intent(MainActivity.this, GravaRegistrosActivity.class);
+            startActivity(gravaRegistroActivity);
+        });
 
-            if (chkarroz.isChecked()) {
-                total += 2.69;
-                resumo.append("- Arroz: R$ 2,69\n");
-            }
-            if (chkleite.isChecked()) {
-                total += 5.00;
-                resumo.append("- Leite: R$ 5,00\n");
-            }
-            if (chkcarne.isChecked()) {
-                total += 10.90;
-                resumo.append("- Carne: R$ 10,90\n");
-            }
-            if (chkfeijao.isChecked()) {
-                total += 2.30;
-                resumo.append("- Feijão: R$ 2,30\n");
-            }
+        btcriarbanco.setOnClickListener(view -> {
+            try {
+                db = openOrCreateDatabase("banco_dados", Context.MODE_PRIVATE, null);
+                db.execSQL("create table if not exists usuarios(numreg integer primary key autoincrement, nome text not null, telefone text not null, email text not null);");
 
-            resumo.append(String.format("\nTotal da compra: R$ %.2f", total));
-
-            if (total == 0) {
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle("Aviso")
-                        .setMessage("Selecione pelo menos um item para comprar.")
-                        .setPositiveButton("OK", null)
+                        .setMessage("Banco de dados criado com sucesso!")
+                        .setNeutralButton("OK", null)
                         .show();
-                return;
+            } catch (Exception e) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Erro")
+                        .setMessage("Erro ao criar banco: " + e.getMessage())
+                        .setNeutralButton("OK", null)
+                        .show();
             }
-
-            // Exibe o resumo
-            new AlertDialog.Builder(MainActivity.this)
-                    .setTitle("Resumo")
-                    .setMessage(resumo.toString())
-                    .setPositiveButton("OK", (dialog, which) -> {
-                        // Ao clicar em OK, exibe a escolha de pagamento
-                        mostrarOpcoesPagamento();
-                    })
-                    .show();
         });
-    }
-
-    private void mostrarOpcoesPagamento() {
-        String[] opcoes = {"PIX", "Cartão de Crédito", "Cartão de Débito", "Dinheiro"};
-
-        new AlertDialog.Builder(MainActivity.this)
-                .setTitle(R.string.forma_pagamento)
-                .setItems(opcoes, (dialog, which) -> {
-                    String formaEscolhida = opcoes[which];
-                    String mensagem = getString(R.string.pagamento_sucesso, formaEscolhida);
-                    
-                    new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Sucesso")
-                            .setMessage(mensagem)
-                            .setPositiveButton("OK", null)
-                            .show();
-                })
-                .show();
     }
 }
